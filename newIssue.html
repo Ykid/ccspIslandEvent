@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>我要提案！</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="https://raw.github.com/necolas/normalize.css/master/normalize.css">
+  <style>
+    ul {
+      margin: 30px auto;
+      width: 600px;
+      height: 560px;
+      border: 1px solid black;
+    }
+    .topic, .content {
+      width: 500px;
+    }
+    html, body {
+      background: #f4f4f4;
+      font-family: "蘋果儷中黑", "Apple LiGothic", "Apple LiGothic Medium", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+    }
+  </style>
+  </head>
+<body>
+  <ul>
+  <h2><strong>我要提案</strong></h2>
+  <h4>分類：</h4>
+  <div class="category">
+      <input type="radio" id="politics" name="category"> 政治話題 </input>&nbsp;
+      <input type="radio" id="economics" name="category"> 經濟金融 </input>&nbsp;
+      <input type="radio" id="dailylife" name="category"> 民生議題 </input>&nbsp;
+      <input type="radio" id="minority" name="category"> 少數族群 </input>&nbsp;
+      <input type="radio" id="others" name="category"> 其他 </input>
+  <h4>地區：</h4>
+      <select>
+        <option>不分區</option>
+        <option>台北市</option>
+        <option>新北市</option>
+        <option>台中市</option>
+        <option>台南市</option>
+        <option>高雄市</option>
+        <option>基隆市</option>
+        <option>桃園縣</option>
+        <option>新竹市</option>
+        <option>新竹縣</option>
+        <option>苗栗縣</option>
+        <option>台中縣</option>
+        <option>彰化縣</option>
+        <option>雲林縣</option>
+        <option>嘉義市</option>
+        <option>嘉義縣</option>
+        <option>台南縣</option>
+        <option>高雄縣</option>
+        <option>屏東縣</option>
+        <option>台東縣</option>
+        <option>花蓮縣</option>
+        <option>宜蘭縣</option>
+        <option>澎湖縣</option>
+        <option>金馬地區</option>
+        <option>綠島蘭嶼</option>
+      </select>
+  <h4>關鍵字：</h4><input class="tags" placeholder="提案相關詞彙"></input>
+  <h4>暱稱：</h4> <input class="name" placeholder="您的名字或暱稱"></input>
+  <h4>主題：</h4><input class="topic" placeholder="您的主題"></input>
+  <h4>內容：</h4><textarea class="content" rows="5" placeholder="有什麼想法呢"></textarea>
+<br><br>
+<div class="col-md-8"></div><button class="col-md-2" id="submitIssue">提案</button><div class="col-md-2">&nbsp;<div>
+  </ul>
+</body>
+</html>
