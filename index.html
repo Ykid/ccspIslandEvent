@@ -1,186 +1,139 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>小島大事 - Island Events</title>
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="http://raw.github.com/necolas/normalize.css/master/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    
-    <style>
-          .background {
-            fill: none;
-            pointer-events: all;
-          }
-
-          #county {
-            fill: #aaa;
-          }
-
-          #county .active {
-            fill: orange;
-          }
-
-          #county-borders {
-            fill: none;
-            stroke: #fff;
-            stroke-width: 1.5;
-            stroke-linejoin: round;
-            stroke-linecap: round;
-            pointer-events: none;
-          }
-
-    </style>
-</head>
-    
-<body>
-    <script type="text/javascript" src="./javascript/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="./javascript/d3.js"></script>
-    <script type="text/javascript" src="./javascript/topojson.v1.min.js"></script>
-    
-    <div class="container">
-        <h1 class="text-center"><strong>小島大事</strong></h1><br>
+    <head>
+        <meta charset="utf-8">
         
-        <div class="col-sm-9" id="graphic" style="text-align: center; vertical-align: center">
-            <svg id="map"></svg>
-        </div>
+        <title>小島大事 - Island Events</title>
         
-        <div class="col-sm-3">
-            <button class="bigbtn"><strong>我要提案！</strong></button>
+        <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="http://raw.github.com/necolas/normalize.css/master/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+    </head>
     
-            <h3><strong>HOT RANKING</strong>&nbsp; <small><a href="">日</a>/<a href="">週</a>/<a href="">月</a></small></h3>
-            <div style="overflow: auto; width: 250px; height:150px;"> 
-                <table class="table">
-                    <tr>
-                        <th class="col-md-1">1</th><td class="col-md-11">台中某文化眷村要被拆了！</td>
-                    </tr>
-                    <tr>
-                        <th>2</th><td>苗栗某開發案環評趁著太陽花學運摸黑過關</td>
-                    </tr>
-                    <tr>
-                        <th>3</th><td>請救救高雄的獼猴們!</td>
-                    </tr>
-                    <tr>
-                        <th>4</th><td>核四又要追加預算了!</td>
-                    </tr>
-                    <tr>
-                        <th>5</th><td>華光社區居民被強行驅離</td>
-                    </tr>
-                    <tr>
-                        <th>6</th><td>a</td>
-                    </tr>
-                    <tr>
-                        <th>7</th><td>a</td>
-                    </tr>
-                    <tr>
-                        <th>8</th><td>a</td>
-                    </tr>
-                    <tr>
-                        <th>9</th><td>a</td>
-                    </tr>
-                    <tr>
-                        <th>10</th><td>a</td>
-                    </tr>
-                </table>
-            </div><br>
-    
-            <h3><strong>NEW ISSUES</strong></h3>
-            <div style="overflow: auto; width: 250px; height:150px;"> 
-                <table class="table">
-                    <tr>
-                        <th class="col-md-1">1</th><td class="col-md-11">核四安檢不做了，打算直接通過?</td>
-                    </tr>
-                    <tr>
-                        <th>2</th><td>苗栗外環道嚴重危害石虎生存</td>
-                    </tr>
-                    <tr>
-                        <th>3</th><td>彰化某候選人開始買票了</td>
-                    </tr>
-                    <tr>
-                        <th>4</th><td>苗栗銅鑼科學園區徵收地案弊端</td>
-                    </tr>
-                    <tr>
-                        <th>5</th><td>a</td>
-                    </tr>
-                    <tr>
-                        <th>6</th><td>a</td>
-                    </tr>
-                    <tr>
-                        <th>7</th><td>a</td>
-                    </tr>
-                    <tr>
-                        <th>8</th><td>a</td>
-                    </tr>
-                    <tr>
-                        <th>9</th><td>a</td>
-                    </tr>
-                    <tr>
-                        <th>10</th><td>a</td>
-                    </tr>
-                </table>
-            </div>
-    
-            <div style="text-align: right;">
-                <a>more...</a>
-            </div><br>
-
-            <input class="col-md-8" type="text" onfocus="if(this.value=='請輸入關鍵字') this.value='';" onblur="if(this.value=='') this.value='請輸入關鍵字';" value="請輸入關鍵字" alt="請輸入關鍵字"></input>
-      
-            <div class="col-md-1"></div>
-            <button type="submit" class="btn btn-default btn-sm;col-md-3;">搜尋</button>
-        </div>
-    </div>
-    
-    <script>       
-            var centered, width = 960, height = 700, blocks;
-
-            //console.log(data);
-            d3.json("./data/twCounty2010.topo.json", function (data) {
-                // load data with topojson.js
-                //console.log(data.objects);
-                topo = topojson.feature(data, data.objects["twCounty2010.geo"]);
-
-                // prepare a Mercator projection for Taiwan
-                prj = d3.geo.mercator().center([120.979531, 23.978567]).scale(50000);
-                path = d3.geo.path().projection(prj);
-                //console.log(topo.features);
-
-                // render them on a svg element with id "map"
-                blocks = d3.select("svg#map").selectAll("path").data(topo.features).enter()
-                          .append("path")
-                          .attr("id", "county")
-                          .attr("d", path)
-                          .attr("stroke", "#fff")
-                          .attr("stroke-width", 1.5)
-                          .on("click", zoom)
+    <body>
+        <script type="text/javascript" src="./javascript/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="./javascript/d3.js"></script>
+        <script type="text/javascript" src="./javascript/topojson.v1.min.js"></script>
+        
+        <script type="text/javascript">
+            var windowSizeArray = [ "width=800, height=600", "width=800,height=600, scrollbars=yes" ];
+     
+            $(document).ready(function(){
+                $('.newWindow').click(function (event){
+                    var url = $(this).attr("href");
+                    var windowName = "popUp";//$(this).attr("name");
+                    var windowSize = windowSizeArray[$(this).attr("rel")];
+     
+                    window.open(url, windowName, windowSize);
+                    event.preventDefault();
+                });
+                
+                $('.bigbtn').click(function() {
+                    var windowName = "我要提案";//$(this).attr("name");
+                    var windowSize = windowSizeArray[$(this).attr("rel")];
+                    window.open('./newIssue.html', windowName, windowSize);
+                    //window.location = 'www.example.com/index.php?id=' + this.id;
+                    event.preventDefault();
+                 });
             });
-
-            function zoom(d) {
-              var x, y, k;
-
-              if (d && centered != d) {
-                  var centroid = path.centroid(d);
-                  x = centroid[0];
-                  y = centroid[1];
-                  k = 4;
-                  centered = d;
-              }
-              else {
-                x = width / 2;
-                y = height / 2;
-                k = 1;
-                centered = null;
-              }
-
-              blocks.selectAll("path")
-                    .classed("active", centered && function(d) { return d === centered; });
-
-              blocks.transition()
-                      .duration(750)
-                      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
-                      .style("stroke-width", 1.5 / k + "px");
-            }
-    </script>
-</body>
+        </script>
+        
+        
+        <div class="container">
+            <h1 class="text-center"><strong>小島大事</strong></h1><br>
+            
+            <div class="col-sm-9" id="graphic" style="text-align: center; vertical-align: center">
+                <div id="map" style="border: 6px solid; border-color: #666"></div>
+            </div>
+            
+            <div class="col-sm-3">
+                <button class="bigbtn"><strong>我要提案！</strong></button>
+                <a href="./newIssue.html" rel="0" class="newWindow" >click me</a>
+        
+                <h3><strong>HOT RANKING</strong>&nbsp; <small><a href="">日</a>/<a href="">週</a>/<a href="">月</a></small></h3>
+                <div style="overflow: auto; width: 250px; height:150px;"> 
+                    <table class="table">
+                        <tr>
+                            <th class="col-md-1">1</th><td class="col-md-11">台中某文化眷村要被拆了！</td>
+                        </tr>
+                        <tr>
+                            <th>2</th><td>苗栗某開發案環評趁著太陽花學運摸黑過關</td>
+                        </tr>
+                        <tr>
+                            <th>3</th><td>請救救高雄的獼猴們!</td>
+                        </tr>
+                        <tr>
+                            <th>4</th><td>核四又要追加預算了!</td>
+                        </tr>
+                        <tr>
+                            <th>5</th><td>華光社區居民被強行驅離</td>
+                        </tr>
+                        <tr>
+                            <th>6</th><td>a</td>
+                        </tr>
+                        <tr>
+                            <th>7</th><td>a</td>
+                        </tr>
+                        <tr>
+                            <th>8</th><td>a</td>
+                        </tr>
+                        <tr>
+                            <th>9</th><td>a</td>
+                        </tr>
+                        <tr>
+                            <th>10</th><td>a</td>
+                        </tr>
+                    </table>
+                </div><br>
+        
+                <h3><strong>NEW ISSUES</strong></h3>
+                <div style="overflow: auto; width: 250px; height:150px;"> 
+                    <table class="table">
+                        <tr>
+                            <th class="col-md-1">1</th><td class="col-md-11">核四安檢不做了，打算直接通過?</td>
+                        </tr>
+                        <tr>
+                            <th>2</th><td>苗栗外環道嚴重危害石虎生存</td>
+                        </tr>
+                        <tr>
+                            <th>3</th><td>彰化某候選人開始買票了</td>
+                        </tr>
+                        <tr>
+                            <th>4</th><td>苗栗銅鑼科學園區徵收地案弊端</td>
+                        </tr>
+                        <tr>
+                            <th>5</th><td>a</td>
+                        </tr>
+                        <tr>
+                            <th>6</th><td>a</td>
+                        </tr>
+                        <tr>
+                            <th>7</th><td>a</td>
+                        </tr>
+                        <tr>
+                            <th>8</th><td>a</td>
+                        </tr>
+                        <tr>
+                            <th>9</th><td>a</td>
+                        </tr>
+                        <tr>
+                            <th>10</th><td>a</td>
+                        </tr>
+                    </table>
+                </div>
+        
+                <div style="text-align: right;">
+                    <a>more...</a>
+                </div><br>
+    
+                <input class="col-md-8" type="text" onfocus="if(this.value=='請輸入關鍵字') this.value='';" onblur="if(this.value=='') this.value='請輸入關鍵字';" value="請輸入關鍵字" alt="請輸入關鍵字"></input>
+          
+                <div class="col-md-1"></div>
+                <button type="submit" class="btn btn-default btn-sm;col-md-3;">搜尋</button>
+            </div>
+        </div>
+        
+        <script type="text/javascript" src="javascript/draw_map.js"></script>
+    </body>
 
 </html>
