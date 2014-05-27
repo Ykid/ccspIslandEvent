@@ -7,6 +7,21 @@ h3 {
     font-family: "Chiller", "蘋果儷中黑", "微軟正黑體"
 }
 
+#dialog-form {
+    font-family:   "蘋果儷中黑", "Apple LiGothic", "Apple LiGothic Medium", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+    line-height: 200%;
+}
+
+textarea {
+    resize: none;
+    border-radius: 5px;
+    line-height: 150%;
+}
+
+#enter {
+    border-radius: 3px;
+}
+
 .bigbtn {
     width: 240px;
     height: 40px;
