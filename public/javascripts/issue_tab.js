@@ -2,7 +2,7 @@ $(function(){
 	// 預設顯示第一個 Tab
 	var _showTab = 0;
 	var $defaultLi = $('ul.tabs li').eq(_showTab).addClass('active');
-	$($defaultLi.find('a').attr('href')).siblings().hide();
+	$($defaultLi.find('a').attr('href')).siblings();//.hide();
  
 	// 當 li 頁籤被點擊時...
 	// 若要改成滑鼠移到 li 頁籤就切換時, 把 click 改成 mouseover
