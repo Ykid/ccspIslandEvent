@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>【小島大事 Formosa Event】</title>
+
+        <link rel="stylesheet" href="stylesheets/jquery-ui-1.10.4.custom.min.css">
+        <link rel="stylesheet" href="stylesheets/index.css">
+        
+        <script type="text/javascript" src="javascripts/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="javascripts/d3.min.js"></script>
+        <script type="text/javascript" src="javascripts/topojson.v1.min.js"></script>
+        <script type="text/javascript" src="javascripts/jquery-ui-1.10.4.custom.min.js"></script>
+        
+        <script type="text/javascript" src="javascripts/issue_tab.js"></script>
+        <script type="text/javascript" src="javascripts/newIssue.js"></script>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="sidebar">
+                <div style="height: 8%; display: block;">
+                    <ul class="tabs">                        
+                        <li style="margin-left: -7.5%"><a href="#new">New</a></li>
+                        <li><a href="#day">Daily</a></li>
+                        <li><a href="#week">Weekly</a></li>
+                        <li><a href="#month">Monthly</a></li>
+                    </ul>
+                </div>
+                
+                <div class="issueContainer">
+                    <div id="new" class="issueList">
+                        <span><a href="#kkk">01. 新議題 - 1</a></span><br>
+                        <span><a href="#kkk">02. 新議題 - 2</a></span><br>
+                        <span><a href="#kkk">03. 新議題 - 3</a></span><br>
+                        <span><a href="#kkk">04. 新議題 - 4</a></span><br>
+                        <span><a href="#kkk">05. 新議題 - 5</a></span><br>
+                        <span><a href="#kkk">06. 新議題 - 6</a></span><br>
+                        <span><a href="#kkk">07. 新議題 - 7</a></span><br>
+                        <span><a href="#kkk">08. 新議題 - 8</a></span><br>
+                        <span><a href="#kkk">09. 新議題 - 9</a></span><br>
+                        <span><a href="#kkk">10. 新議題 - 10</a></span><br>
+                        <span><a href="#kkk">11. 新議題 - 11</a></span><br>
+                        <span><a href="#kkk">12. 新議題 - 12</a></span><br>
+                        <span><a href="#kkk">13. 新議題 - 13</a></span><br>
+                        <span><a href="#kkk">14. 新議題 - 14</a></span><br>
+                        <span><a href="#kkk">15. 新議題 - 15</a></span><br>
+                        <!--span><a href="#kkk">16. 新議題 - 16</a></span><br>
+                        <span><a href="#kkk">17. 新議題 - 17</a></span><br>
+                        <span><a href="#kkk">18. 新議題 - 18</a></span><br>
+                        <span><a href="#kkk">19. 新議題 - 19</a></span><br>
+                        <span><a href="#kkk">20. 新議題 - 20</a></span><br-->
+                    </div>
+                    
+                    <div id="day" class="issueList">
+                        <span><a href="#kkk">01. 日排名 - 1</a></span><br>
+                        <span><a href="#kkk">02. 日排名 - 2</a></span><br>
+                        <span><a href="#kkk">03. 日排名 - 3</a></span><br>
+                        <span><a href="#kkk">04. 日排名 - 4</a></span><br>
+                        <span><a href="#kkk">05. 日排名 - 5</a></span><br>
+                        <span><a href="#kkk">06. 日排名 - 6</a></span><br>
+                        <span><a href="#kkk">07. 日排名 - 7</a></span><br>
+                        <span><a href="#kkk">08. 日排名 - 8</a></span><br>
+                        <span><a href="#kkk">09. 日排名 - 9</a></span><br>
+                        <span><a href="#kkk">10. 日排名 - 10</a></span><br>
+                        <span><a href="#kkk">11. 日排名 - 11</a></span><br>
+                        <span><a href="#kkk">12. 日排名 - 12</a></span><br>
+                        <span><a href="#kkk">13. 日排名 - 13</a></span><br>
+                        <span><a href="#kkk">14. 日排名 - 14</a></span><br>
+                        <span><a href="#kkk">15. 日排名 - 15</a></span><br>
+                        <!--span><a href="#kkk">16. 日排名 - 16</a></span><br>
+                        <span><a href="#kkk">17. 日排名 - 17</a></span><br>
+                        <span><a href="#kkk">18. 日排名 - 18</a></span><br>
+                        <span><a href="#kkk">19. 日排名 - 19</a></span><br>
+                        <span><a href="#kkk">20. 日排名 - 20</a></span><br-->
+                    </div>
+                    
+                    <div id="week" class="issueList">
+                        <span><a href="#kkk">01. 週排名 - 1</a></span><br>
+                        <span><a href="#kkk">02. 週排名 - 2</a></span><br>
+                        <span><a href="#kkk">03. 週排名 - 3</a></span><br>
+                        <span><a href="#kkk">04. 週排名 - 4</a></span><br>
+                        <span><a href="#kkk">05. 週排名 - 5</a></span><br>
+                        <span><a href="#kkk">06. 週排名 - 6</a></span><br>
+                        <span><a href="#kkk">07. 週排名 - 7</a></span><br>
+                        <span><a href="#kkk">08. 週排名 - 8</a></span><br>
+                        <span><a href="#kkk">09. 週排名 - 9</a></span><br>
+                        <span><a href="#kkk">10. 週排名 - 10</a></span><br>
+                        <span><a href="#kkk">11. 週排名 - 11</a></span><br>
+                        <span><a href="#kkk">12. 週排名 - 12</a></span><br>
+                        <span><a href="#kkk">13. 週排名 - 13</a></span><br>
+                        <span><a href="#kkk">14. 週排名 - 14</a></span><br>
+                        <span><a href="#kkk">15. 週排名 - 15</a></span><br>
+                        <!--span><a href="#kkk">16. 週排名 - 16</a></span><br>
+                        <span><a href="#kkk">17. 週排名 - 17</a></span><br>
+                        <span><a href="#kkk">18. 週排名 - 18</a></span><br>
+                        <span><a href="#kkk">19. 週排名 - 19</a></span><br>
+                        <span><a href="#kkk">20. 週排名 - 20</a></span><br-->
+                    </div>
+                    
+                    <div id="month" class="issueList">
+                        <span><a href="#kkk">01. 月排名 - 1</a></span><br>
+                        <span><a href="#kkk">02. 月排名 - 2</a></span><br>
+                        <span><a href="#kkk">03. 月排名 - 3</a></span><br>
+                        <span><a href="#kkk">04. 月排名 - 4</a></span><br>
+                        <span><a href="#kkk">05. 月排名 - 5</a></span><br>
+                        <span><a href="#kkk">06. 月排名 - 6</a></span><br>
+                        <span><a href="#kkk">07. 月排名 - 7</a></span><br>
+                        <span><a href="#kkk">08. 月排名 - 8</a></span><br>
+                        <span><a href="#kkk">09. 月排名 - 9</a></span><br>
+                        <span><a href="#kkk">10. 月排名 - 10</a></span><br>
+                        <span><a href="#kkk">11. 月排名 - 11</a></span><br>
+                        <span><a href="#kkk">12. 月排名 - 12</a></span><br>
+                        <span><a href="#kkk">13. 月排名 - 13</a></span><br>
+                        <span><a href="#kkk">14. 月排名 - 14</a></span><br>
+                        <span><a href="#kkk">15. 月排名 - 15</a></span><br>
+                        <!--span><a href="#kkk">16. 月排名 - 16</a></span><br>
+                        <span><a href="#kkk">17. 月排名 - 17</a></span><br>
+                        <span><a href="#kkk">18. 月排名 - 18</a></span><br>
+                        <span><a href="#kkk">19. 月排名 - 19</a></span><br>
+                        <span><a href="#kkk">20. 月排名 - 20</a></span><br-->
+                    </div>
+                </div>
+                
+                <button type="button" class="bigbtn" id="newIssue"><strong>我要提案！</strong></button>
+            </div>
+            
+            <div class="header">
+                <span style="border: none;">小島大事 Formosa Event</span>
+                
+                <span style="width:4%; margin-top: 0.2%; margin-right: 0.5%; float:right; font-size: 70%"><a href="https://github.com/lizst/ccspIslandEvent">Git</a></span>
+            </div>
+            
+            <div id="map"></div>
+            
+        </div>
+        
+        <div id="issueForm" title="">
+            <form>
+                <fieldset style="border-radius: 4px">
+                    <div id="rule" style="height: 20%; margin-bottom: 2%">
+                        <span>1. 發文前請先確認議題真實性，禁止虛構議題</span>
+                        <span>2. 此平台為公民議題平台，不接受八卦、花邊新聞</span>
+                        <span>3. 個人觀點不盡相同，請尊重彼此意見，勿引起筆戰</span>
+                        <span>4. 違反上述規則則一律刪文</span>
+                    </div>
+                    
+                    <label for="name">暱　稱</label>
+                    <input class="name" name="name" id="name" placeholder="名字或暱稱">
+                    <br>
+                    
+                    <label for="category">分　類</label>
+                    <label style="margin-left: 0"><input type="radio" id="politics" name="category"> 政治話題 &nbsp;</label>
+                    <label><input type="radio" id="economics" name="category"> 經濟金融 &nbsp;</label>
+                    <label><input type="radio" id="social" name="category"> 民生議題 &nbsp;</label>
+                    <label><input type="radio" id="minority" name="category"> 少數族群 &nbsp;</label>
+                    <label><input type="radio" id="others" name="category"> 其他 </label>
+                    <br>
+                    
+                    <label for="region">地　區</label>
+                    <select id="region">
+                        <option>不分區</option>
+                        <option>台北市</option>
+                        <option>新北市</option>
+                        <option>台中市</option>
+                        <option>台南市</option>
+                        <option>高雄市</option>
+                        <option>基隆市</option>
+                        <option>桃園縣</option>
+                        <option>新竹市</option>
+                        <option>新竹縣</option>
+                        <option>苗栗縣</option>
+                        <option>台中市</option>
+                        <option>彰化縣</option>
+                        <option>雲林縣</option>
+                        <option>嘉義市</option>
+                        <option>嘉義縣</option>
+                        <option>台南市</option>
+                        <option>高雄市</option>
+                        <option>屏東縣</option>
+                        <option>台東縣</option>
+                        <option>花蓮縣</option>
+                        <option>宜蘭縣</option>
+                        <option>澎湖縣</option>
+                        <option>金馬地區</option>
+                        <option>綠島蘭嶼</option>
+                    </select>
+                    <br>
+                    
+                    <label for="topic">主　題</label>
+                    <input class="topic" placeholder="議題標題" id="enter">
+                    <br>
+                    
+                    <label for="tags">標　籤</label>
+                    <input name="tags" placeholder="議題相關詞彙" id="enter">
+                    <br>
+                    
+                    <label for="content">內　容</label><br>
+                    <textarea rows="6" placeholder="有什麼想法呢？" id="enter"></textarea>
+                    <br>
+                    
+                    <button id="submitIssue">提交</button>
+                </fieldset>
+            </form>
+        </div>
+
+        <script type="text/javascript" src="javascripts/draw_map.js"></script>
+    </body>
+</html>

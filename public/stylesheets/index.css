@@ -1,0 +1,357 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    
+    background: #f4f4f4;
+    font-family: "蘋果儷中黑", "Apple LiGothic", "Apple LiGothic Medium", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+    font-size: 110%;
+    color: #525252;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    
+    margin: 0;
+    overflow: hidden;
+}
+
+.header {
+    height: 4.43%;
+    
+    background-color: #90BD90;
+    border-bottom: 1px solid #fff;
+    
+    font-size: 100%;
+    color: #fff;
+    
+    padding: 0.8% 0 0 1%;
+}
+
+.header span {
+    width:20%; 
+    
+    float: left; 
+    display: inline-block; 
+    
+    text-align: center; 
+    font-weight: bolder; 
+    
+    border: 1px solid; 
+    border-radius: 4px
+}
+
+.header a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#map {
+    width: 70%;
+    height: 93%;
+    
+    border: 10px solid transparent;
+    
+    display: inline-block;
+    float: left;
+    
+    text-align: center;
+}
+
+#taiwan {
+    fill: #aaa;
+}
+        
+#county {
+    stroke: #fff;
+    stroke-width: 1.5;
+}
+
+.mapBackground {
+    fill: none;
+    pointer-events: all;
+}
+
+.active {
+    fill: #187072;
+}
+
+.sidebar {
+    width: 28%;
+    height: 100%;
+    
+    display: inline-block;
+    float: left;
+    
+    background-color: #001325;
+    border-right: 1px solid #fff;
+    
+    text-align: center;
+    color: #fff;
+}
+
+ul, li {
+    list-style: none;
+}
+
+ul.tabs {
+    width: 90%;
+    height: 50%;
+    
+    float: left;
+    display: block;
+    
+    text-align: center;
+    font-size: 80%;
+}
+
+ul.tabs li {
+    width: 20%;
+    height: 89%;
+    margin: 0 3.1%;
+    
+    float: left;
+    
+    border: 1px solid #ddd;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+ul.tabs li a {
+    color: #fff;
+    font-weight: bolder;
+	text-decoration: none;
+    
+    pointer-events: none;
+}
+
+ul.tabs li:hover {
+	background: #90BD90;
+}
+
+ul.tabs li.active{
+	background: #187072;
+}
+
+.issueContainer {
+    width: 99%;
+    height: 80%;
+    margin-top: -4.7%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+    float: right;
+    display: block;
+    
+    border-top: 1px solid #ddd;
+    
+    font-size: 80%;
+    text-align: left;
+}
+
+.issueList {
+    width: 100%;
+    height: 100%;
+    
+    overflow: hidden;
+}
+
+.issueList span {
+    width: 50%;
+    height: auto;
+    
+    margin-top: 2%;
+    margin-left: 2.6%;
+    margin-bottom: -5%;
+    
+    display: block;
+}
+
+.issueList a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.issueList a:hover {
+    color: #F2E4C2;
+}
+
+.issueList a:visited {
+    color: #fff;
+}
+
+.bigbtn {
+    width: 90%;
+    height: 6%;
+    margin: 130% 0 0 6%;
+    
+    color: #fff;
+    font-size: 110%;
+    
+    background: #90BD90;
+    border: 0px solid;
+    border-radius: 3px;
+}
+
+.bigbtn:hover {
+    background: #187072;
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+    border-radius: 5px;
+    line-height: 150%;
+}
+
+.discuss {
+    width: 69%;
+    height: 100%;
+    margin: 1.4% 0 0 1.4%;
+    
+    display: inline-block;
+    float: left;
+    
+    overflow-y: auto;
+}
+
+.issueInfo {
+    height: 20%;
+    
+    border-radius: 3px;
+    background: #65e2d3;
+    color: #fff;
+}
+
+.issueInfo span{
+    margin-right: 1%;
+}
+
+#title {
+    width: 80%;
+    margin-top: 1%;
+    
+    display: inline-block;
+    float: left;
+    
+    font-size: 135%;
+    font-weight: bolder;
+}
+
+#author {
+    width: 20%;
+    margin-top: 2.5%;
+    
+    display: inline-block;
+    float: left;
+    
+    font-size: 80%;
+
+}
+
+#date {
+    width: 100%;
+    margin: 1% 0 0 0.5%;
+    
+    display: block;
+    float: left;
+    
+    font-size: 80%;
+}
+
+#tags {
+    width: 95%;
+    margin: 1% 0 0 0.5%;
+    
+    display: block;
+    float: left;
+    
+    font-size: 80%;
+}
+
+#opinion {
+    width: 100%;
+    
+    display: inline-block;
+    float: left;
+    
+    font-size: 80%;
+}
+
+.response {
+    width: 100%;
+    
+    display: inline-block;
+    float: left;
+    
+    font-size: 50%;
+}
+
+.feedback {
+    width: 99%;
+    height: auto;
+    margin-top: 1%;
+    
+    display: inline-block;
+    float: left;
+    
+    border: 1px solid;
+}
+
+.fbkTitle {
+    background: #65e2d3;
+    color: #fff;
+}
+
+.fbkContent {
+
+}
+
+#issueForm {
+    font-family: "蘋果儷中黑", "Apple LiGothic", "Apple LiGothic Medium", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+    font-size: 80%;
+}
+
+#issueForm label {
+    width: auto;
+    margin: 1%;
+    
+    display: inline-block;
+}
+
+#issueForm input {
+    border: 1px solid #BBBBBB;
+    border-radius: 4px;
+}
+
+#issueForm textarea {
+    width: 95%;
+    margin-left: 1%;
+    
+    border: 1px solid #BBBBBB;
+    border-radius: 4px;
+}
+
+#issueForm button {
+    width: 8%;
+    margin: 1% 0 0 89%;
+    
+    color: #fff;
+    font-size: 110%;
+    
+    background: #90BD90;
+    border: 0px solid;
+    border-radius: 3px;
+}
+
+#issueForm button:hover {
+    background: #187072;
+    cursor: pointer;
+}
+
+#rule span {
+    margin: 0.5% 0 0 1%%;
+    display: block;
+    
+    font-weight: bolder;
+}

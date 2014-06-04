@@ -1,0 +1,23 @@
+{
+  "name": "twiss",
+  "version": "0.0.0",
+  "description": "A simple issue discussion platform",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lizst/ccspIslandEvent.git"
+  },
+  "keywords": [
+    "taiwan",
+    "issue"
+  ],
+  "author": "lizst",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lizst/ccspIslandEvent/issues"
+  },
+  "homepage": "https://github.com/lizst/ccspIslandEvent"
+}
