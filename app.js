@@ -8,7 +8,7 @@ var app = express();
 app.set('port', 5000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(express.favicon());
+//app.use(express.favicon());
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.cookieParser(process.env.COOKIE_SECRET));
